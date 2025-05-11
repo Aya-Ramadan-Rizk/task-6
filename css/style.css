@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    width: 100%;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas: 
+    "parent-o The-tour The-tour The-tour parent-x"
+    "child-o-1 top-left top-center top-right child-x-1"
+    "child-o-2 center-left center-center center-right child-x-2"
+    "child-o-3 bottom-left bottom-center bottom-right child-x-3"
+    "child-o-4 user-name-o match-score-display-board-xo user-name-x child-x-4"
+    ;
+    background-color: aliceblue;
+}
+#The-tour{
+    grid-area: The-tour;
+}
+.The-tour-text{
+    font-size: 4.5rem;
+}
+.The-tour-img{
+    width: 8rem;
+    height: 8rem;
+}
+.parent-x-text ,.parent-o-text{
+    width: 8rem;
+    height: 8rem;
+}
+#match-score-display-board-xo{
+    grid-area: match-score-display-board-xo;
+}
+.child{
+    width: 7rem;
+    height: 7rem;
+    cursor: grab;
+}
+.game-board{
+    padding-top: 1rem;
+}
+.child ,.game-board{
+    border: 3px solid #f87171;
+}
+.user-name-text{
+    font-size: 1.125rem;
+}
+.user-name-img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+/* ----------------------- {x ----------------------- */
+#parent-x{
+    grid-area: parent-x;
+}
+#child-x-1{
+    grid-area: child-x-1;
+}
+#child-x-2{
+    grid-area: child-x-2;
+}
+#child-x-3{
+    grid-area: child-x-3;
+}
+#child-x-4{
+    grid-area: child-x-4;
+}
+#user-name-x{
+    grid-area: user-name-x;
+}
+/* ----------------------- x} ----------------------- */
+/* ----------------------- {o ----------------------- */
+#parent-o{
+    grid-area: parent-o;
+}
+#child-o-1{
+    grid-area: child-o-1;
+}
+#child-o-2{
+    grid-area: child-o-2;
+}
+#child-o-3{
+    grid-area: child-o-3;
+}
+#child-o-4{
+    grid-area: child-o-4;
+}
+#user-name-o{
+    grid-area: user-name-o;
+}
+/* ----------------------- o} ----------------------- */
+/* ----------------------- {Game-board ----------------------- */
+/* ------------ {top ------------ */
+#top-left{
+    grid-area: top-left;
+}
+#top-center{
+    grid-area: top-center;
+}
+#top-right{
+    grid-area: top-right;
+}
+/* ------------ top} ------------ */
+/* ------------ {center ------------ */
+#center-left{
+    grid-area: center-left;
+}
+#center-center{
+    grid-area: center-center;
+}
+#center-right{
+    grid-area: center-right;
+}
+/* ------------ center} ------------ */
+/* ------------ {bottom ------------ */
+#bottom-left{
+    grid-area: bottom-left;
+}
+#bottom-center{
+    grid-area: bottom-center;
+}
+#bottom-right{
+    grid-area: bottom-right;
+}
+/* ------------ bottom} ------------ */
+/* ----------------------- Game-board} ----------------------- */
+/* ---------------------------------------------- {spacing ---------------------------------------------- */
+/* ----------------------- {lg ----------------------- */
+@media(max-width: 992px){
+    #match-score-display-board-xo{
+    font-size: 4rem;
+    }
+    #match-score-display-board-xo-vs{
+        width: 8rem;
+        height: 8rem;
+    }
+}
+/* ----------------------- lg} ----------------------- */
+/* ----------------------- {md ----------------------- */
+@media(max-width: 768px){
+    #match-score-display-board-xo{
+        font-size: 3.5rem;
+    }
+    #match-score-display-board-xo-vs{
+        width: 7rem;
+        height: 7rem;
+    }
+    .The-tour-text{
+        font-size: 3.5rem;
+    }
+    .The-tour-img{
+        width: 5rem;
+        height: 5rem;
+        margin-top: 30%;
+    }
+}
+/* ----------------------- md} ----------------------- */
+/* ----------------------- {md~sm ----------------------- */
+@media(max-width: 682px){
+    #match-score-display-board-xo{
+    font-size: 3rem;
+    }
+    #match-score-display-board-xo-vs{
+        width: 6rem;
+        height: 6rem;
+    }
+}
+/* ----------------------- md~sm} ----------------------- */
+/* ----------------------- {sm ----------------------- */
+@media(max-width: 682px){
+    #match-score-display-board-xo-vs{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+/* ----------------------- sm} ----------------------- */
+/* ----------------------- {xs ----------------------- */
+@media(max-width: 633px){
+    #main{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(6,1fr);
+        grid-template-areas: 
+        "The-tour The-tour The-tour The-tour"
+        "child-x-1 child-x-2 child-x-3 child-x-4"
+        "user-name-x top-left top-center top-right"
+        "match-score-display-board-xo center-left center-center center-right"
+        "user-name-o bottom-left bottom-center bottom-right"
+        "child-o-1 child-o-2 child-o-3 child-o-4"
+        ;
+    }
+    #parent-o,#parent-x{
+        display: none;
+    }
+    .child{
+        border: none;
+        width: 6rem;
+        height: 6rem;
+    }
+    #match-score-display-board-xo{
+        font-size: 2.5rem;
+        transform: rotate(270deg);
+    }
+    #match-score-display-board-xo-vs{
+        width: 4rem;
+        height: 4rem;
+    }
+    .user-name-text{
+        font-size: 1rem;
+    }
+}
+/* ----------------------- xs} ----------------------- */
+/* ----------------------- { > xs ----------------------- */
+@media(max-width: 452px){
+    .The-tour-text{
+        font-size: 2.5rem;
+    }
+    .The-tour-img{
+        width: 4rem;
+        height: 4rem;
+        margin-top: 42%;
+    }
+    .user-name-text{
+        font-size: .9rem;
+    }
+    .user-name-img{
+        width: 4rem;
+        height: 4rem;
+    }
+    .child{
+        width: 5rem;
+        height: 5rem;
+    }
+    #match-score-display-board-xo-vs{
+        margin-top: 20%;
+    }
+}
+/* ----------------------- > xs} ----------------------- */
+/* ----------------------- { > xs ----------------------- */
+@media(max-width: 287px){
+    .child{
+        width: 3rem;
+        height: 3rem;
+    }
+}
+/* ----------------------- > xs} ----------------------- */
+/* ---------------------------------------------- spacing} ---------------------------------------------- */
